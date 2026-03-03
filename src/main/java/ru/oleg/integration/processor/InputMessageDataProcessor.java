@@ -24,9 +24,8 @@ public class InputMessageDataProcessor implements Processor {
             result.add(splitMessageData);
         }
 
-        Message outputMessage = new Message();
-        outputMessage.setData(result);
-        return outputMessage;
+        message.setData(result);
+        return message;
     }
 
 }
