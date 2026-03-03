@@ -4,12 +4,12 @@ import java.util.LinkedList;
 import ru.oleg.integration.dto.Message;
 import ru.oleg.integration.processor.Processor;
 
-public class IntegrationPipelineImpl implements IntegrationPipeline {
+public class ProcessingPipelineImpl implements ProcessingPipeline {
 
     private final LinkedList<Processor> processors = new LinkedList<>();
     private Message message;
 
-    public IntegrationPipelineImpl(Message message) {
+    public ProcessingPipelineImpl(Message message) {
         this.message = message;
     }
 
@@ -19,7 +19,7 @@ public class IntegrationPipelineImpl implements IntegrationPipeline {
     }
 
     @Override
-    public <T, S> IntegrationPipeline process(Processor processor) {
+    public <T, S> ProcessingPipeline process(Processor processor) {
         this.processors.add(processor);
         return this;
     }

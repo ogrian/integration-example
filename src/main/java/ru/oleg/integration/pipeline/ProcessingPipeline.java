@@ -2,10 +2,10 @@ package ru.oleg.integration.pipeline;
 
 import ru.oleg.integration.processor.Processor;
 
-public interface IntegrationPipeline {
+public interface ProcessingPipeline {
 
     void start();
 
-    <T, S> IntegrationPipeline process(Processor processor);
+    <T, S> ProcessingPipeline process(Processor processor);
 
 }

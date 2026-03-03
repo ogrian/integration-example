@@ -3,7 +3,7 @@ package ru.oleg.integration;
 import ru.oleg.integration.dto.InputMessageData;
 import ru.oleg.integration.dto.Message;
 import ru.oleg.integration.dto.Settings;
-import ru.oleg.integration.pipeline.IntegrationPipelineImpl;
+import ru.oleg.integration.pipeline.ProcessingPipelineImpl;
 import ru.oleg.integration.processor.InputMessageDataProcessor;
 import ru.oleg.integration.processor.SplitMessageListProcessor;
 
@@ -19,7 +19,7 @@ public class Application {
         message.setSourceData(data);
         message.setSettings(new Settings());
 
-        new IntegrationPipelineImpl(message)
+        new ProcessingPipelineImpl(message)
             .process(new InputMessageDataProcessor())
             .process(new SplitMessageListProcessor())
             .start();
